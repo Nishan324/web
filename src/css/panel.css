@@ -1,0 +1,29 @@
+.panel{
+    border: none;
+    height: 40px;
+    background-color: #1f6858;
+    display: flex;
+    /*color: white;*/
+    align-items: center;
+    justify-content: space-evenly;
+}
+.panel-ops p{
+
+    display: inline;
+    margin-left: 15px;
+    border: none;
+}
+
+.panel-ops{
+    width: 70%;
+    font-size: 0.85rem;
+
+}
+.panel-deals{
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.border :hover{
+    border: none;
+}

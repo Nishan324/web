@@ -1,0 +1,160 @@
+
+*{
+    border: none;
+}
+.navbar1{
+    border: none;
+    height: 90px;
+    background-color: #11b18b;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-logo{
+    overflow: hidden;
+    height: 100px;
+    width: 170px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+.logo12{
+    display: flex;
+    background-image: url("../images/logoo.png");
+    background-size: contain;
+    height:100% ;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+
+}
+
+
+
+.add-first12{
+    color: black;
+    font-size: 0.5rem;
+    margin-left: 15px;
+}
+
+.add-second{
+    font-size: 1rem;
+    margin-left: 3px;
+    font-weight: 500;
+}
+
+.add-icon{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.nav-search12{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    width: 620px;
+    height: 40px;
+    border-radius: 5px;
+}
+.nav-search12 option{
+    width: 10px;
+}
+.nav-search12:hover{
+    border: 2px solid orange;
+}
+/* CSS */
+.search-select12 {
+    width: 80px; /* Adjust the width as needed */
+    padding: 8px;
+    font-size: 15px;
+    /*border: 1px solid #ccc;*/
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Style the dropdown arrow */
+.search-select12:after {
+    content: '\25BC'; /* Unicode character for a down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-100%);
+}
+
+/* Style the options */
+.search-select12 option {
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+}
+
+
+
+.search-input{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+}
+
+.search-icon{
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    background-color: #febd68;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #0f1111;
+}
+
+span{
+    font-size:0.7rem ;
+}
+
+/*.nav-login{*/
+/*    !*height: 250px;*!*/
+/*}*/
+
+.nav-login button {
+    border: #febd68;
+    background: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-login button:hover {
+    color: #febd68;
+}
+
+.nav-second{
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+.nav-cart i{
+    border: none;
+    color: black;
+    font-size: 30px;
+}
+
+.nav-cart{
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.cart-button{
+
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 18px;
+}

@@ -1,8 +1,8 @@
 import React from 'react';
-import 'C://Users//hp//Desktop//webapiassigmrnt//frontend-31a-Nishan324//src//css//bootstrap.min.css'
-import 'C://Users//hp//Desktop//webapiassigmrnt//frontend-31a-Nishan324//src//css//responsive.css'
-import 'C://Users//hp//Desktop//webapiassigmrnt//frontend-31a-Nishan324//src//css//style1.css'
-import 'C://Users//hp//Desktop//webapiassigmrnt//frontend-31a-Nishan324//src//css//custom.css'
+// import '../css/bootstrap.min.css'
+// import '../css/responsive.css'
+// import '../css/style1.css'
+// import '../css/custom.css'
 const check = () => {
     
     return(

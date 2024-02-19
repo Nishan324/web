@@ -1,26 +1,26 @@
 import {
+  Route,
   BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom'
-import './App.css';
-import Login from './pages/login';
-import Register from './pages/register';
+  Routes
+} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import Homepage from './pages/homepage';
-import Check from './pages/check';
-import navbar from './pages/navbar';
-import SeeMore from "./pages/seemorepage1";
-import CartPage from './pages/CartPage';
+import './App.css';
 import AboutUs from './pages/AboutUs';
-import ContactUs from './pages/ContactUs';
-import UserProfile from './pages/UserProfile';
-import AdminDashboard from './pages/AdminDashboard';
-import ProductAdminPanel from './pages/AddProductForm';
 import AddProductForm from './pages/AddProductForm';
-import SeeMoreLaptop from './pages/SeeMoreLaptop';
+import AdminDashboard from './pages/AdminDashboard';
 import AdminNavbar from './pages/AdminNavbar';
+import CartPage from './pages/CartPage';
+import ContactUs from './pages/ContactUs';
+import SeeMoreLaptop from './pages/SeeMoreLaptop';
+import UserProfile from './pages/UserProfile';
+import Check from './pages/check';
+import Homepage from './pages/homepage';
+import Login from './pages/login';
+import Register from './pages/register';
+import SeeMore from "./pages/seemorepage1";
+import AdminRoutes from './protected/AdminRoutes';
+import UserRoutes from './protected/UserRoutes';
 // import Navbar1 from './com/navbar';
 // C:\Users\hp\Desktop\webapiassigmrnt\frontend-31a-Nishan324\src\App.js
  
@@ -45,8 +45,17 @@ function App(){
     <Route path='/laptop' element={<SeeMoreLaptop/>}/>
     <Route path='/ad' element={<AdminNavbar/>}/>
 
+    <Route element={<AdminRoutes/>}>
+      <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
+    </Route>
+
+    <Route element={<UserRoutes/>}>
+      <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
+    </Route>
+
     
   </Routes>
+
 </Router>
   );
 }

@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import {  toast , ToastContainer } from 'react-toastify';
-import { CreateApi } from '../api/api';
+// import { CreateApi } from '../api/api';
 import '../css/style.css';
 import Login from './login';
+import { createUserApi } from '../api/api';
+import { useNavigate } from 'react-router';
 
 
 const Register=()=>{
-const[firstName,SetFirstName]=useState('');
-const[phoneNumber,SetPhoneNumber]=useState('');
+const[fullname,setFullname]=useState('');
+const[number,setNumber]=useState('');
 const[email,SetEmail]=useState('');
 const[password,SetPassword]=useState('');
 const[confirmpassword,setconfirmpassword]=useState('')
+const navigate = useNavigate()
 
 const changeFirstName=(e)=>{
-  SetFirstName(e.target.value)
+  setFullname(e.target.value)
 }
 
 const changeEmail=(e)=>{
@@ -21,7 +24,7 @@ const changeEmail=(e)=>{
 }
 
 const changePhonenumber=(e)=>{
-  SetPhoneNumber(e.target.value)
+  setNumber(e.target.value)
 }
 
 const changePassword=(e)=>{
@@ -34,20 +37,21 @@ const changeconpassword=(e)=>{
  const handelSubmit=(e)=>{
   e.preventDefault()
   const data={
-    firstName:firstName,
+    fullname:fullname,
     email:email,
-    phoneNumber:phoneNumber,
+    number:number,
     password:password
   }
   if (password !== confirmpassword) {
     toast.error("Passwords don't match");
     return;
   }
-  CreateApi(data).then((res) => {
+  createUserApi(data).then((res) => {
     if(res.data.success == false){
       toast.error(res.data.message)
     } else{
       toast.success(res.data.message)
+      navigate('/login')
     }
   }).catch((err) => {
     toast.error("Server Error")

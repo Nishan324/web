@@ -31,25 +31,31 @@ function App(){
 <ToastContainer/>
 
   <Routes>
-  
-    <Route element={<UserRoutes/>}>
+
     <Route path='/login' element={<Login/>}/>
     <Route path='/register' element={<Register/>}/>
-    <Route path='/homepage' element={<Homepage/>}/>
-    <Route path='/seemore' element={<SeeMore/>}/>
-    <Route path='/check' element={<Check/>}/>
-    <Route path='/cart' element={<CartPage/>}/>
-    <Route path='/about' element={<AboutUs/>}/>
-    <Route path='/contact' element={<ContactUs/>}/>
-    <Route path='/profile' element={<UserProfile/>}/>
-    <Route path='/laptop' element={<SeeMoreLaptop/>}/>
+
+
+    
+
+
       
+  
+    <Route element={<UserRoutes/>}>
+    <Route path='/homepage' element={<Homepage/>}/>
+      <Route path='/seemore' element={<SeeMore/>}/>
+      <Route path='/check' element={<Check/>}/>
+      <Route path='/cart' element={<CartPage/>}/>
+      <Route path='/about' element={<AboutUs/>}/>
+      <Route path='/contact' element={<ContactUs/>}/>
+      <Route path='/profile' element={<UserProfile/>}/>
+      <Route path='/laptop' element={<SeeMoreLaptop/>}/>  
     </Route>
+
     <Route element={<AdminRoutes/>}>
     <Route path='/admin' element={<AdminDashboard/>}/>
-    <Route path='/pro' element={<AddProductForm/>}/>
-    <Route path='/ad' element={<AdminNavbar/>}/>
-
+      <Route path='/pro' element={<AddProductForm/>}/>
+      <Route path='/ad' element={<AdminNavbar/>}/>
     </Route>
   </Routes>
 

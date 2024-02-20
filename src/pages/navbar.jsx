@@ -18,6 +18,8 @@ const Navbar1 = () => {
 
     const navigate = useNavigate();
 
+    const user = JSON.parse(localStorage.getItem('user'))
+
     const handleSignInClick = () => {
         // Navigate to the login page
         navigate('/login');
@@ -69,12 +71,21 @@ const Navbar1 = () => {
 
 
 
-            <div className="nav-login">
-                <button onClick={handleSignInClick}>Hello, Sign in</button>
-                <Link to="/accounts">
-                    <button>Accounts</button>
-                </Link>
-            </div>
+            {user ? (
+                <div>
+                    <button>Hello, {user.fullname}</button>
+                    <Link to="/accounts">
+                        <button>Accounts</button>
+                    </Link>
+                </div>
+            ) : (
+                <div>
+                    <button onClick={handleSignInClick}>Hello, Sign in</button>
+                    <Link to="/accounts">
+                        <button>Accounts</button>
+                    </Link>
+                </div>
+            )}
 
 
             <div className="nav-return border">

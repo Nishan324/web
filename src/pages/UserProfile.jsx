@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const UserProfile = () => {
   const [userData, setUserData] = useState({
-    username: 'JohnDoe',
     fullName: 'John Doe',
     email: 'john.doe@example.com',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget odio ac lectus vestibulum faucibus eget in metus.',
@@ -55,30 +54,9 @@ const UserProfile = () => {
               alt="Profile"
               className="img-fluid rounded-circle mb-3"
             />
-            <div className="mb-3">
-              <label htmlFor="pictureInput" className="btn btn-secondary">
-                Change Picture
-                <input
-                  type="file"
-                  id="pictureInput"
-                  accept="image/*"
-                  style={{ display: 'none' }}
-                  onChange={handlePictureChange}
-                />
-              </label>
-            </div>
           </div>
           <div className="col-md-8">
             {/* Basic Information */}
-            <div className="mb-3">
-              <strong>Username:</strong>
-              <input
-                type="text"
-                className="form-control"
-                value={userData.username}
-                onChange={(e) => handleFieldChange('username', e.target.value)}
-              />
-            </div>
             <div className="mb-3">
               <strong>Full Name:</strong>
               <input

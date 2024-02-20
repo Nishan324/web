@@ -1,13 +1,18 @@
-import React from 'react';
-import Navbar1 from "./navbar";
-import Footer from "./footer";
-import Panel from "./panel";
-import { Button, Container, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import Footer from "./footer";
+import Navbar1 from "./navbar";
+import Panel from "./panel";
 
 function App() {
-  function handleSeeMoreClick(category) {
-    window.location.href = `/seemore/${category}`;
+
+  function handleMobileSeeMore() {
+    window.location.replace('/seemore')
+  }
+
+  function handleLaptopSeeMore() {
+    window.location.replace('/laptop')
   }
 
   return (
@@ -31,16 +36,16 @@ function App() {
             <Card>
               <Card.Body className="d-flex flex-column align-items-center">
                 <Card.Title>Mobile</Card.Title>
-                <Button onClick={() => handleSeeMoreClick('apple')} variant="primary">See more</Button>
+                <Button onClick={handleMobileSeeMore} variant="primary">See more</Button>
               </Card.Body>
             </Card>
           </Col>
-          
+
           <Col md={4}>
             <Card>
               <Card.Body className="d-flex flex-column align-items-center">
                 <Card.Title>Laptop</Card.Title>
-                <Button onClick={() => handleSeeMoreClick('samsung')} variant="primary">See more</Button>
+                <Button onClick={handleLaptopSeeMore} variant="primary">See more</Button>
               </Card.Body>
             </Card>
           </Col>
@@ -49,11 +54,11 @@ function App() {
             <Card>
               <Card.Body className="d-flex flex-column align-items-center">
                 <Card.Title>Watch</Card.Title>
-                <Button onClick={() => handleSeeMoreClick('microsoft')} variant="primary">See more</Button>
+                <Button variant="primary">See more</Button>
               </Card.Body>
             </Card>
           </Col>
-          
+
           {/* Repeat the pattern for other boxes */}
         </Row>
       </Container>

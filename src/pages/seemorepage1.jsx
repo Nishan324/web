@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllProductApi } from '../api/api';
+import { toast } from 'react-toastify';
+import { createCartApi, createWishListApi, getAllProductApi } from '../api/api';
 import '../css/see1.css';
 import Footer from "./footer";
 import Navbar1 from "./navbar";
@@ -17,6 +18,34 @@ const SeeMore = () => {
   }, []);
 
   const mobileProducts = products.filter(product => product.category === 'Mobile');
+
+  const createCart = (productId) => {
+    const formData = new FormData();
+    formData.append('productId', productId)
+    createCartApi(formData).then((res) => {
+      if (res.data.success) {
+        toast.success(res.data.message)
+      } else {
+        toast.error(res.data.message)
+      }
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+
+  const createWishlist = (productId) => {
+    const formData = new FormData();
+    formData.append('productId', productId)
+    createWishListApi(formData).then((res) => {
+        if (res.data.success) {
+            toast.success(res.data.message)
+        } else {
+            toast.error(res.data.message)
+        }
+    }).catch((err) => {
+        console.log(err)
+    })
+}
 
   return (
     <div>
@@ -41,10 +70,10 @@ const SeeMore = () => {
                     <p className="card-text">{product.description}</p>
                     <p className="card-text"><strong>Price: ${product.price}</strong></p>
                     <div className="button-container">
-                      <button className="btn btn-outline-danger">
+                      <button onClick={() => createWishlist(product._id)} className="btn btn-outline-danger">
                         <i className="fa-regular fa-heart"></i> Add to Wishlist
                       </button>
-                      <button className="btn btn-primary ml-2">
+                      <button onClick={() => createCart(product._id)} className="btn btn-primary ml-2">
                         <i className="fa-regular fa-cart-plus"></i> Add to Cart
                       </button>
                     </div>
